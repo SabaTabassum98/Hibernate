@@ -2,8 +2,7 @@ package com.hibernate.project;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-import com.hirbenate.project.User;
+import com.hibernate.project.User;
 
 public class App {
 
@@ -18,16 +17,21 @@ org.hibernate.Session session = factory.getCurrentSession();
 
 try {
 // Create object of entity class type
-User user = new User( 3, "Mahima","Shah","sshah@tns.org");
+User user = new User();
 // Start transaction
 session.beginTransaction();
 // Perform operation
-session.save(user);
+//*session.save(user);
+//updating object
+user.setUser_Fname("saba");
 
+
+//delete
+session.delete(user);
 
 // Commit the transaction 
 session.getTransaction().commit();
-System.out.println("Row Added");
+System.out.println(user);
 
 
 } finally {

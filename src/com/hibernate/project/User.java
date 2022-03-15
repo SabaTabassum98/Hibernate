@@ -7,7 +7,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="user")
 public class User{
-	
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public User(int user_id, String user_Fname, String user_Lname, String user_email) {
 		this.user_id = user_id;
